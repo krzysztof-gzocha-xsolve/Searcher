@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<project name="XSolve\Searcher" default="run-tests">
+
+    <target name="cs-fix">
+        <exec command="./bin/php-cs-fixer fix src/"/>
+    </target>
+
+    <target name="run-tests">
+        <exec executable="bin/phpunit" checkreturn="true" passthru="true">
+            <arg value="src/XSolve/Searcher/Test/"/>
+        </exec>
+    </target>
+
+    <target name="coverage">
+        <exec command="./bin/phpunit src/XSolve/Searcher/Test --coverage-html=coverage"
+              checkreturn="false"
+              passthru="false" />
+    </target>
+
+    <target name="phpmd">
+        <exec executable="./bin/phpmd" checkreturn="true" passthru="true">
+            <arg value="src/"/>
+            <arg value="text"/>
+            <arg value="cleancode,codesize,controversial,design,unusedcode"/>
+            <arg value="--exclude"/>
+            <arg value="src/XSolve/Searcher/Test"/>
+        </exec>
+    </target>
+
+</project>

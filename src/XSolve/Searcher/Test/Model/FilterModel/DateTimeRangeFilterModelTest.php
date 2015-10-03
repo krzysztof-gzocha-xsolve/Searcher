@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Model\FilterModel;
+namespace XSolve\Searcher\Test\Model\FilterModel;
 
 use XSolve\Searcher\Model\FilterModel\DateTimeRangeFilterModel;
 
@@ -35,16 +35,15 @@ class DateTimeRangeFilterModelTest extends \PHPUnit_Framework_TestCase
         return [
             [new \DateTime(), new \DateTime(), true],
             [new \DateTimeImmutable(), new \DateTimeImmutable(), true],
-            [new OtherCustomDateTimeClass(), new OtherCustomDateTimeClass(), true],
+            [new CustomDateTime(), new CustomDateTime(), true],
         ];
     }
 
+    /**
+     * @return DateTimeRangeFilterModel
+     */
     private function getDateTimeRangeFilterModel()
     {
         return new DateTimeRangeFilterModel();
     }
-}
-
-class OtherCustomDateTimeClass extends \DateTime
-{
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Model\FilterModel;
+namespace XSolve\Searcher\Test\Model\FilterModel;
 
 use XSolve\Searcher\Model\FilterModel\TextFilterModel;
 

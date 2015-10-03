@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Model\FilterModel;
+namespace XSolve\Searcher\Test\Model\FilterModel;
 
 use XSolve\Searcher\Model\FilterModel\DateTimeFilterModel;
 
@@ -31,7 +31,7 @@ class DateTimeFilterModelTest extends \PHPUnit_Framework_TestCase
         return [
             [new \DateTime(), true],
             [new \DateTimeImmutable(), true],
-            [new SomeCustomDateTime(), true],
+            [new CustomDateTime(), true],
         ];
     }
 
@@ -42,8 +42,4 @@ class DateTimeFilterModelTest extends \PHPUnit_Framework_TestCase
     {
         return new DateTimeFilterModel();
     }
-}
-
-class SomeCustomDateTime extends \DateTime
-{
 }
