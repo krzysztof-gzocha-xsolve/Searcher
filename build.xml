@@ -11,10 +11,18 @@
         </exec>
     </target>
 
-    <target name="coverage">
-        <exec command="./bin/phpunit src/XSolve/Searcher/Test --coverage-html=coverage"
-              checkreturn="false"
-              passthru="false" />
+    <target name="coverage-html">
+        <exec executable="./bin/phpunit" checkreturn="false" passthru="false">
+            <arg value="src/XSolve/Searcher/Test"/>
+            <arg value="--coverage-html=coverage"/>
+        </exec>
+    </target>
+
+    <target name="coverage-clover">
+        <exec executable="./bin/phpunit" checkreturn="false" passthru="false">
+            <arg value="src/XSolve/Searcher/Test"/>
+            <arg value="--coverage-clover=coverage.clover"/>
+        </exec>
     </target>
 
     <target name="phpmd">
