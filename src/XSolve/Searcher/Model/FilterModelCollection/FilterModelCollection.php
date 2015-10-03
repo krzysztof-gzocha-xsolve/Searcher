@@ -16,7 +16,11 @@ class FilterModelCollection implements FilterModelCollectionInterface
      */
     public function __construct(array $filterModels)
     {
-        $this->filterModels = $filterModels;
+        foreach ($filterModels as $filterModel) {
+            // In this way we will ensure that
+            // every element in array has correct type
+            $this->addFilterModel($filterModel);
+        }
     }
 
     /**
