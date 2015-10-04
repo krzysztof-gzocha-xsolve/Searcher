@@ -1,6 +1,6 @@
 <?php
 
-namespace XSolve\Searcher\Model\FilterModelCollection;
+namespace XSolve\Searcher\Model\FilterModel\Collection;
 
 use XSolve\Searcher\Model\FilterModel\FilterModelInterface;
 
@@ -16,6 +16,7 @@ class FilterModelCollection implements FilterModelCollectionInterface
      */
     public function __construct(array $filterModels)
     {
+        $this->filterModels = [];
         foreach ($filterModels as $filterModel) {
             // In this way we will ensure that
             // every element in array has correct type
