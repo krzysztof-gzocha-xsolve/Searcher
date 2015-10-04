@@ -1,6 +1,6 @@
 <?php
 
-namespace XSolve\Searcher\Model\FilterModelCollection;
+namespace XSolve\Searcher\Model\FilterModel\Collection;
 
 use XSolve\Searcher\Model\FilterModel\FilterModelInterface;
 
