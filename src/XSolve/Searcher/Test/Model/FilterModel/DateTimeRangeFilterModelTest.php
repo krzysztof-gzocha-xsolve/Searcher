@@ -1,6 +1,5 @@
 <?php
 
-
 namespace XSolve\Searcher\Test\Model\FilterModel;
 
 use XSolve\Searcher\Model\FilterModel\DateTimeRangeFilterModel;

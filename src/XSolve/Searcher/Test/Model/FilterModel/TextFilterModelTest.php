@@ -36,7 +36,7 @@ class TextFilterModelTest extends \PHPUnit_Framework_TestCase
 
             ['', false],
             [null, false],
-            [new \stdClass, false],
+            [new \stdClass(), false],
         ];
     }
 
@@ -48,4 +48,3 @@ class TextFilterModelTest extends \PHPUnit_Framework_TestCase
         return new TextFilterModel();
     }
 }
-

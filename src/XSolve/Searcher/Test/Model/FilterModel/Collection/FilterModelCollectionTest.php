@@ -12,7 +12,7 @@ class FilterModelCollectionTest extends \PHPUnit_Framework_TestCase
     {
         $filterModels = [];
 
-        for ($i = 1; $i <= self::NUMBER_OF_FILTER_MODELS; $i++) {
+        for ($i = 1; $i <= self::NUMBER_OF_FILTER_MODELS; ++$i) {
             $filterModels[] = $this->getFilterModel();
         }
 
@@ -32,4 +32,3 @@ class FilterModelCollectionTest extends \PHPUnit_Framework_TestCase
             ->getMock();
     }
 }
-

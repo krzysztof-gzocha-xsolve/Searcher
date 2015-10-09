@@ -25,7 +25,7 @@ class FilterModelCollection implements FilterModelCollectionInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getFilterModels()
     {
@@ -33,7 +33,7 @@ class FilterModelCollection implements FilterModelCollectionInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function addFilterModel(FilterModelInterface $filterModel)
     {

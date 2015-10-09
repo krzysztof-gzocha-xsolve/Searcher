@@ -3,6 +3,8 @@
 namespace XSolve\Searcher\FilterImposer\Collection;
 
 use XSolve\Searcher\FilterImposer\FilterImposerInterface;
+use XSolve\Searcher\Model\FilterModel\FilterModelInterface;
+use Exception;
 
 class FilterImposerCollection implements FilterImposerCollectionInterface
 {
@@ -25,7 +27,7 @@ class FilterImposerCollection implements FilterImposerCollectionInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function addFilterImposer(FilterImposerInterface $filterImposer)
     {
@@ -35,10 +37,31 @@ class FilterImposerCollection implements FilterImposerCollectionInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function getFilterImposers()
     {
         return $this->filterImposers;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSupportingFilterImposer($queryOrQueryBuilder, FilterModelInterface $filterModel)
+    {
+        $supportingFilterImposers = array_filter(
+            $this->filterImposers,
+            function (FilterImposerInterface $filterImposer) use ($queryOrQueryBuilder, $filterModel) {
+                return $filterImposer->supports($queryOrQueryBuilder, $filterModel);
+            }
+        );
+        if (count($supportingFilterImposers) > 1) {
+            throw new Exception(sprintf(
+                "More than one imposer found for filter model of class '%s'",
+                get_class($filterModel)
+            ));
+        }
+
+        return $supportingFilterImposers ? reset($supportingFilterImposers) : null;
     }
 }

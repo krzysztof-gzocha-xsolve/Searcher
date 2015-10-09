@@ -5,8 +5,7 @@ namespace XSolve\Searcher\Model\FilterModel\Collection;
 use XSolve\Searcher\Model\FilterModel\FilterModelInterface;
 
 /**
- * Interface FilterModelCollectionInterface
- * @package XSolve\Searcher\Model\FilterModelCollection
+ * Interface FilterModelCollectionInterface.
  */
 interface FilterModelCollectionInterface
 {

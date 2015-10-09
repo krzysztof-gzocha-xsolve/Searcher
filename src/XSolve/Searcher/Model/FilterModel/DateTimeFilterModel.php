@@ -3,8 +3,7 @@
 namespace XSolve\Searcher\Model\FilterModel;
 
 /**
- * Class DateTimeFilterModel
- * @package XSolve\Searcher\Model\FilterModel
+ * Class DateTimeFilterModel.
  */
 class DateTimeFilterModel implements FilterModelInterface
 {
@@ -34,7 +33,7 @@ class DateTimeFilterModel implements FilterModelInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function isImposed()
     {

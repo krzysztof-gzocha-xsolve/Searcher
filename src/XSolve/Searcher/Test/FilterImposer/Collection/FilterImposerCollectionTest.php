@@ -12,7 +12,7 @@ class FilterImposerCollectionTest extends \PHPUnit_Framework_TestCase
     {
         $filterImposers = [];
 
-        for ($i = 1; $i <= self::NUMBER_OF_FILTER_IMPOSERS; $i++) {
+        for ($i = 1; $i <= self::NUMBER_OF_FILTER_IMPOSERS; ++$i) {
             $filterImposers[] = $this->getFilterImposer();
         }
 
@@ -32,4 +32,3 @@ class FilterImposerCollectionTest extends \PHPUnit_Framework_TestCase
             ->getMock();
     }
 }
-
