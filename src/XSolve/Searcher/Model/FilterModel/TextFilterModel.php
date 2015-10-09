@@ -30,7 +30,7 @@ class TextFilterModel implements FilterModelInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function isImposed()
     {
